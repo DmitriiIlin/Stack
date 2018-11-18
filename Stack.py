@@ -6,7 +6,6 @@ def input_string(S):
     first_simbol=S[0]
     a=Stack_mod.Stack()
     for i in range(string_len):
-        print(S[i])
         if S[i]==first_simbol:
             a.push(S[i])
         else:

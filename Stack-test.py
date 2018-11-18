@@ -1,7 +1,9 @@
-import unittest,random,Stack
+import unittest,random,Stack,Stack_1
 
 def input_generation():
-    i=random.randint(0,20)
+    i=random.randint(1,20)
+    i=12
+    print(i,"длина строки")
     St=''
     for j in range(i):
         k=random.randint(1,2)
@@ -31,12 +33,19 @@ def q_ty_St(St):
 
 class Stack_tests(unittest.TestCase):
 
-    def test_equal_q_ty_test(self):
+    def test_equal_q_ty_Stack(self):
         S=input_generation()
         Q_ty=q_ty_St(S)
-        print(Q_ty[0])
-        print(Q_ty[1])
-        self.assertEqual(Stack.input_string(S)==True,Q_ty[0]==Q_ty[1])
+        print(Q_ty[0],"Q-ty of sample 1 in Test 1")
+        print(Q_ty[1],"Q-ty of sample 2 in Test 1")
+        self.assertEqual(Stack.input_string(S)=="True",Q_ty[0]==Q_ty[1])
+
+    def test_equal_q_ty_Stack_1(self):
+        S=input_generation()
+        Q_ty=q_ty_St(S)
+        print(Q_ty[0],"Q-ty of sample 1 in Test 2")
+        print(Q_ty[1],"Q-ty of sample 2 in Test 2")
+        self.assertEqual(Stack_1.input_string(S)=="True",Q_ty[0]==Q_ty[1])    
 
 if __name__ == '__main__':
     try:
