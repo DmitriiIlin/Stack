@@ -8,20 +8,17 @@ def input_string(S):
     a=Stack_mod.Stack()
     if string_len % 2 != 0:
         output="False"
-  #      print(output,"ПЧ")
     else:
-        while index<string_len and output:
+        while index<string_len:
             if S[index]=="(":
                 a.push(S[index])
-            elif S[index]==")":
-                if string_len==0:
-                    output=="False"
-                else:
-                    a.pop()
+            elif S[index]==")" and a.size()>0:
+                a.pop()
+            else:
+                output="False"
             index+=1 
- #       print("ВЧ",output)
     return output 
 
 
-r="))(((("
+r="()())("
 print(input_string(r))
